@@ -1,0 +1,27 @@
+scalar Date
+
+type Car {
+  brand: String!
+  model: String!
+}
+
+type OwnedCar {
+  brand: String!
+  model: String!
+  purchaseDate: Date!
+  color: String!
+}
+
+type Driver {
+  name: String!
+  surname: String!
+  licence: String!
+  birthDate: Date!
+  cars: [OwnedCar]!
+}
+
+type Query {
+  drivers: [Driver]!
+  Driver: Driver
+  cars(brand: String): [Car]!
+}
